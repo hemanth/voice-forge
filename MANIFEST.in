@@ -1,0 +1,14 @@
+include README.md
+include LICENSE
+include pyproject.toml
+recursive-include voice_forge *.py
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude * *.orig
+recursive-exclude * *.rej
+exclude .gitignore
+prune .git
+prune .venv
+prune build
+prune dist
+prune *.egg-info 

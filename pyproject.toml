@@ -1,0 +1,95 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "voice-forge"
+version = "1.0.0"
+description = "A command-line tool for text-to-speech generation using Chatterbox TTS"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Hemanth HM", email = "hemanth.hm@gmail.com"}
+]
+maintainers = [
+    {name = "Hemanth HM", email = "hemanth.hm@gmail.com"}
+]
+keywords = ["tts", "text-to-speech", "voice", "speech", "chatterbox", "cli"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Sound/Audio :: Speech",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: System Shells",
+    "Environment :: Console",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "chatterbox-tts",
+    "torch>=1.9.0",
+    "torchaudio>=0.9.0",
+    "pygame>=2.0.0",
+    "playsound>=1.2.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov",
+    "black",
+    "flake8",
+    "mypy",
+    "build",
+    "twine",
+]
+
+[project.urls]
+"Homepage" = "https://h3manth.com"
+"Repository" = "https://github.com/hemanth/voice-forge"
+"Bug Reports" = "https://github.com/hemanth/voice-forge/issues"
+"Source" = "https://github.com/hemanth/voice-forge"
+"Documentation" = "https://github.com/hemanth/voice-forge#readme"
+
+[project.scripts]
+voice-forge = "voice_forge.main:main"
+
+[tool.setuptools.packages.find]
+include = ["voice_forge*"]
+exclude = ["tests*"]
+
+[tool.setuptools.package-data]
+voice_forge = ["py.typed"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true 
