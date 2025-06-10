@@ -140,12 +140,12 @@ voice-forge --file input.txt --save batch_output.wav
 ## Tips for Best Results
 
 ### General Use (TTS and Voice Agents)
-- The default settings (`exaggeration=0.5`, `cfg_weight=0.5`) work well for most prompts
-- If the reference speaker has a fast speaking style, try lowering `cfg_weight` to around `0.3`
+- The default settings (`exaggeration=0.5`, `cfg-weight=0.5`) work well for most prompts
+- If the reference speaker has a fast speaking style, try lowering `cfg-weight` to around `0.3`
 
 ### Expressive or Dramatic Speech
-- Use lower `cfg_weight` values (e.g., `~0.3`) and increase `exaggeration` to around `0.7` or higher
-- Higher `exaggeration` tends to speed up speech; reducing `cfg_weight` helps compensate with slower, more deliberate pacing
+- Use lower `cfg-weight` values (e.g., `~0.3`) and increase `exaggeration` to around `0.7` or higher
+- Higher `exaggeration` tends to speed up speech; reducing `cfg-weight` helps compensate with slower, more deliberate pacing
 
 ### Voice Cloning
 - Use high-quality reference audio (clear speech, minimal background noise)
